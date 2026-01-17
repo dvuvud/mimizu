@@ -1,0 +1,38 @@
+# cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# virtual environment
+venv/
+env/
+.venv/
+.env/
+
+# python packaging
+*.egg
+*.egg-info/
+dist/
+build/
+*.whl
+
+# editor settings
+.vscode/
+
+# OS files
+.DS_Store
+
+# executable builds
+*.exe
+*.dll
+*.so
+*.dylib
+*.spec
+
+# logs
+*.log
+
+# ignore generated files or output directories
+/screenshots/
+/__pycache__/
+/*.pyc
