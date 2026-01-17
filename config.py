@@ -8,6 +8,7 @@ VERSION = "0.1.0"
 ACTIVATION_HOTKEY = '<ctrl>+<shift>+t'
 
 EASYOCR_PATH = 'vendor/easyocr'
+OCR_LANGUAGE = 'jpn'
 
 # GUI settings for lookups
 RESULT_WINDOW_WIDTH = 400
