@@ -76,6 +76,5 @@ class SelectionOverlay(QWidget):
 
         if not self.selection_rect.isNull():
             painter.setPen(QColor(255, 255, 255))
-            painter.setBrush(QColor(255, 255, 255, 40))
             painter.drawRect(self.selection_rect.normalized())
 
