@@ -74,8 +74,6 @@ class SelectionOverlay(QWidget):
         painter = QPainter(self)
         painter.setRenderHint(QPainter.RenderHint.Antialiasing)
 
-        #painter.fillRect(self.rect(), QColor(0, 0, 0, 0))
-
         if not self.selection_rect.isNull():
             painter.setPen(QColor(255, 0, 0))
             painter.setBrush(QColor(255, 0, 0, 40))
