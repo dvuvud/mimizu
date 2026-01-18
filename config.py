@@ -21,5 +21,5 @@ RESULT_WINDOW_ALPHA = 0.95
 DICT_DIR = os.path.join(os.path.dirname(__file__), 'data', 'dictionaries')
 
 # Screen capture settings
-AUTO_SAVE_CAPTURES = True
+AUTO_SAVE_CAPTURES = False
 SAVE_DIRECTORY = "./captures"
