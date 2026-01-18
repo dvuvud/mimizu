@@ -1,7 +1,4 @@
-numpy
-PyQt6
-easyocr
-pynput
-mss
-Pillow
 torch
+easyocr
+Pillow
+pynput

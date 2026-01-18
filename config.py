@@ -2,12 +2,14 @@ import os
 
 # Application settings
 APP_NAME = "mimizu"
-VERSION = "0.1.0"
 
-# Current default (might change)
-ACTIVATION_HOTKEY = '<ctrl>+<shift>+t'
+# App defaults
+ACTIVATION_HOTKEY = '<cmd>+<shift>+l'
+EXIT_HOTKEY = '<esc>'
 
-EASYOCR_PATH = 'vendor/easyocr'
+SC_OBJ = './build/mimizu_overlay'
+DEBUG_MODE = True
+
 OCR_LANGUAGE = 'jpn'
 
 # GUI settings for lookups
@@ -17,3 +19,7 @@ RESULT_WINDOW_ALPHA = 0.95
 
 # Dictionary settings
 DICT_DIR = os.path.join(os.path.dirname(__file__), 'data', 'dictionaries')
+
+# Screen capture settings
+AUTO_SAVE_CAPTURES = True
+SAVE_DIRECTORY = "./captures"
