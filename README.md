@@ -34,16 +34,14 @@ All keybinds and related settings are defined in [config.py](https://github.com/
 
 ### Defaults
 
-Start screen capture and OCR workflow - `<ctrl>+<shift>+s`
+| Value              | Description                            |
+|--------------------|----------------------------------------|
+| `<ctrl>+<shift>+s` | Start screen capture and OCR workflow  |
+| `Esc`              | Exit program                           |
+| `False`            | Auto save screen captures              |
+| `captures/`        | Folder for saved screen captures       |
+| `False`            | Display debug messages                 |
+| `400`              | Lookup window width                    |
+| `300`              | Lookup window height                   |
+| `0.95`             | Lookup window alpha                    |
 
-Exit program - `Esc`
-
-Auto save screen captures - `False` (Captures are saved to `captures/` when set to `True`)
-
-Display debug messages - `False`
-
-Lookup window width - `400`
-
-Lookup window height - `300`
-
-Lookup window alpha - `0.95`
