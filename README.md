@@ -34,7 +34,7 @@ All keybinds and related settings are defined in [config.py](https://github.com/
 
 ### Defaults
 
-Start screen capture and OCR workflow - `Cmd + Shift + L`
+Start screen capture and OCR workflow - `<ctrl>+<shift>+s`
 
 Exit program - `Esc`
 
