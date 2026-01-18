@@ -36,8 +36,6 @@ All keybinds and related settings are defined in [config.py](https://github.com/
 
 Start screen capture and OCR workflow - `Cmd + Shift + L`
 
-Cancel screen capture - `Esc`
-
 Exit program - `Esc`
 
 Auto save screen captures - `False` (Captures are saved to `captures/` when set to `True`)
