@@ -6,15 +6,6 @@ class SelectionView: NSView {
     var endPoint: NSPoint?
     private let borderWidth: CGFloat = 2.0
     
-    override var acceptsFirstResponder: Bool { return true }
-    
-    override func keyDown(with event: NSEvent) {
-        if event.keyCode == 53 { // ESC
-            print("PNG_DATA:null")
-            NSApp.terminate(nil)
-        }
-    }
-    
     override func mouseDown(with event: NSEvent) {
         startPoint = convert(event.locationInWindow, from: nil)
         endPoint = startPoint
@@ -130,8 +121,8 @@ let contentView = SelectionView(frame: screenFrame)
 window.contentView = contentView
 
 window.makeKeyAndOrderFront(nil)
-window.makeFirstResponder(contentView)
-NSApp.activate(ignoringOtherApps: true)
 
+NSApp.activate(ignoringOtherApps: true)
 NSApp.setActivationPolicy(.accessory)
+
 NSApp.run()
