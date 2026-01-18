@@ -4,7 +4,7 @@ import os
 APP_NAME = "Mimizu"
 
 # App defaults
-ACTIVATION_HOTKEY = '<cmd>+<shift>+l'
+ACTIVATION_HOTKEY = '<ctrl>+<shift>+s'
 EXIT_HOTKEY = '<esc>'
 
 SC_OBJ = './build/mimizu_overlay'
