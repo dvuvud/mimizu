@@ -1,14 +1,14 @@
 import os
 
 # Application settings
-APP_NAME = "mimizu"
+APP_NAME = "Mimizu"
 
 # App defaults
 ACTIVATION_HOTKEY = '<cmd>+<shift>+l'
 EXIT_HOTKEY = '<esc>'
 
 SC_OBJ = './build/mimizu_overlay'
-DEBUG_MODE = True
+DEBUG_MODE = False
 
 OCR_LANGUAGE = 'jpn'
 
@@ -21,5 +21,5 @@ RESULT_WINDOW_ALPHA = 0.95
 DICT_DIR = os.path.join(os.path.dirname(__file__), 'data', 'dictionaries')
 
 # Screen capture settings
-AUTO_SAVE_CAPTURES = True
+AUTO_SAVE_CAPTURES = False
 SAVE_DIRECTORY = "./captures"
