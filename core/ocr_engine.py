@@ -8,28 +8,28 @@ class OCREngine:
         self.reader = None
         self.model_storage_directory = config.OCR_MODEL_DIR
         self._initialize_reader()
-    
+
     def _initialize_reader(self):
         """Initialize the EasyOCR reader with configured language"""
         try:
             if config.DEBUG_MODE:
                 print(f"[DEBUG] Initializing OCR reader for language: {self.language}")
                 print(f"[DEBUG] Model directory: {self.model_storage_directory}")
-            
+
             self.reader = easyocr.Reader(
-                [self.language],
-                gpu=False,
-                model_storage_directory=self.model_storage_directory,
-                download_enabled=True
-            )
-            
+                    [self.language],
+                    gpu=False,
+                    model_storage_directory=self.model_storage_directory,
+                    download_enabled=True
+                    )
+
             if config.DEBUG_MODE:
                 print("[DEBUG] OCR reader initialized successfully")
-                
+
         except Exception as e:
             print(f"Error initializing OCR reader: {e}")
             self.reader = None
-    
+
     def extract_text(self, image):
         """
         Extract Japanese text from a PIL Image
@@ -46,6 +46,8 @@ class OCREngine:
 
             results = self.reader.readtext(
                     img_array,
+                    decoder=config.OCR_DECODER,
+                    beamWidth=config.OCR_BEAMSEARCH_WIDTH,
                     min_size=10,
                     contrast_ths=0.1,
                     adjust_contrast=0.5,
@@ -59,7 +61,7 @@ class OCREngine:
             if config.DEBUG_MODE:
                 print(f"[DEBUG] Found {len(results)} text regions")
                 for bbox, text, conf in results:
-                    print(f"[DEBUG]   Text: '{text}' (confidence: {conf:.2f})")
+                    print(f"[DEBUG] Text: '{text}' (confidence: {conf:.2f})")
 
             return results
 
