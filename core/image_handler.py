@@ -3,9 +3,10 @@ from datetime import datetime
 import config
 
 class ImageSaver:
-    def __init__(self):
+    def __init__(self, ocr_engine=None):
         self.save_dir = config.SAVE_DIRECTORY
         self.auto_save = config.AUTO_SAVE_CAPTURES
+        self.ocr_engine = ocr_engine;
 
     def generate_filename(self):
         """Generate a timestamped filename for the capture"""
@@ -24,3 +25,12 @@ class ImageSaver:
         if self.auto_save:
             filename = self.save_image(image)
             print(f"Screen capture was saved to {filename}")
+
+        if self.ocr_engine:
+            print("\nExtracting text...")
+            full_text = self.ocr_engine.get_full_text(image)
+            return full_text;
+        else:
+            if config.DEBUG_MODE:
+                print("[DEBUG] OCR engine not initialized")
+                return None;

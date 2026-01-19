@@ -1,4 +1,5 @@
 torch
 easyocr
+numpy
 Pillow
 pynput

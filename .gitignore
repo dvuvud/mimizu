@@ -33,6 +33,7 @@ build/
 *.log
 
 # ignore generated files or output directories
-/screenshots/
-/__pycache__/
-/*.pyc
+screenshots/
+__pycache__/
+*.pyc
+*.pth

@@ -89,7 +89,7 @@ class SelectionView: NSView {
         path.lineWidth = borderWidth
         let dashPattern: [CGFloat] = [8.0, 4.0]
         path.setLineDash(dashPattern, count: 2, phase: 0)
-        NSColor.white.setStroke()
+        NSColor.red.setStroke()
         path.stroke()
     }
 }
