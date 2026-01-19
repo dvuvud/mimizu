@@ -37,34 +37,44 @@ class OCREngine:
         if self.reader is None:
             print("OCR reader not initialized")
             return []
-        
+
         try:
             img_array = np.array(image)
-            
+
             if config.DEBUG_MODE:
                 print(f"[DEBUG] Processing image: {img_array.shape}")
-            
-            results = self.reader.readtext(img_array)
-            
+
+            results = self.reader.readtext(
+                    img_array,
+                    min_size=10,
+                    contrast_ths=0.1,
+                    adjust_contrast=0.5,
+                    text_threshold=0.7,
+                    low_text=0.4,
+                    link_threshold=0.4,
+                    canvas_size=2560,
+                    mag_ratio=1.0
+                    )
+
             if config.DEBUG_MODE:
                 print(f"[DEBUG] Found {len(results)} text regions")
                 for bbox, text, conf in results:
                     print(f"[DEBUG]   Text: '{text}' (confidence: {conf:.2f})")
-            
+
             return results
-            
+
         except Exception as e:
             if config.DEBUG_MODE:
                 print(f"[DEBUG] Error during OCR extraction: {e}")
             return []
-    
+
     def get_text_only(self, image):
         """
         Extract only the text strings from an image
         """
         results = self.extract_text(image)
         return [text for _, text, _ in results]
-    
+
     def get_full_text(self, image, separator='\n'):
         """
         Extract all text and combine into a single string
