@@ -12,4 +12,4 @@ ${SC_OBJ}: ${SC_SRC}
 	swiftc -o ${SC_OBJ} ${SC_SRC}
 
 clean:
-	rm -rf build captures
+	rm -rf build captures __pycache__ core/__pycache__
