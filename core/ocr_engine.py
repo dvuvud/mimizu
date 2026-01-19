@@ -18,7 +18,7 @@ class OCREngine:
 
             self.reader = easyocr.Reader(
                     [self.language],
-                    gpu=False,
+                    gpu=True,
                     model_storage_directory=self.model_storage_directory,
                     download_enabled=True
                     )
