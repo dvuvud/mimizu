@@ -117,6 +117,7 @@ class SelectionWindow(Gtk.Window):
 
 def select_region(callback):
     """Calls callback when done"""
+    print("[DEBUG] Screen capture started")
     win = SelectionWindow(callback)
     Gtk.main()
 

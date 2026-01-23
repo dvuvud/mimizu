@@ -1,5 +1,8 @@
+#!/usr/bin/env python3 
+
 from SelectionOverlay import select_region
 from RegionCapture import capture_region
+
 
 def handle_selection(rect):
     png_base64 = capture_region(rect)
@@ -7,5 +10,6 @@ def handle_selection(rect):
         print("PNG_DATA:null")
     else:
         print("PNG_DATA:" + png_base64)
+    return
 
 select_region(handle_selection)

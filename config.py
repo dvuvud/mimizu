@@ -12,6 +12,7 @@ DEBUG_MODE = True
 AUTO_SAVE_CAPTURES = False
 SAVE_DIRECTORY = './captures'
 SC_OBJ = './build/mimizu_overlay'
+SC_PY_PATH = './native/gtk/index.py'
 
 # OCR settings
 OCR_LANGUAGE = 'ja'

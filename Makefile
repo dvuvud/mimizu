@@ -4,7 +4,13 @@ SC_SRC = native/macos/SelectionOverlay.swift
 SC_OBJ = build/mimizu_overlay
 BUILD_DIR = build
 
-all: ${SC_OBJ}
+all: 
+	echo "does nothing"
+
+macos: ${SC_OBJ}
+	python3 main.py
+
+linux:
 	python3 main.py
 
 ${SC_OBJ}: ${SC_SRC}
