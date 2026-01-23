@@ -16,7 +16,7 @@ SC_OBJ = './build/mimizu_overlay'
 # OCR settings
 OCR_LANGUAGE = 'ja'
 OCR_MODEL_DIR = os.path.join(os.path.dirname(__file__), 'data', 'models')
-OCR_DECODER = 'beamsearch'
+OCR_DECODER = 'greedy'
 OCR_BEAMSEARCH_WIDTH = 10
 OCR_PREPROCESS_MODE = 'auto'
 
