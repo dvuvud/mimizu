@@ -1,17 +1,19 @@
-.PHONY: clean all
+.PHONY: clean all macos linux
 
 SC_SRC = native/macos/SelectionOverlay.swift
 SC_OBJ = build/mimizu_overlay
 BUILD_DIR = build
+PY = python3
+MAIN = main.py
 
 all: 
 	echo "does nothing"
 
 macos: ${SC_OBJ}
-	python3 main.py
+	${PY} ${MAIN}
 
 linux:
-	python3 main.py
+	${PY} ${MAIN}
 
 ${SC_OBJ}: ${SC_SRC}
 	mkdir -p ${BUILD_DIR}

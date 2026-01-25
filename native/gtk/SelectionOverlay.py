@@ -105,7 +105,7 @@ class SelectionWindow(Gtk.Window):
         w = abs(x2 - x1)
         h = abs(y2 - y1)
 
-        cr.set_source_rgba(1, 1, 1, 0.2)
+        cr.set_source_rgba(1, 1, 1, DARK_ALPHA)
         cr.rectangle(x, y, w, h)
         cr.fill()
 

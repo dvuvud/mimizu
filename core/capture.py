@@ -65,4 +65,3 @@ class ScreenCapture:
                 print(f"[DEBUG] Error during capture: {e}")
             return None
 
-# こんにちは、お元気ですか？
