@@ -4,15 +4,15 @@
 
 The macOS version is currently functional. Windows and Linux support are planned.
 
-## Installation
-
-### macOS
+## Installation & Running
 
 #### 1. Clone the repository
 ```bash
 git clone https://github.com/yourusername/mimizu.git
 cd mimizu
 ```
+
+### macOS
 
 #### 2. Install Python dependencies
 ```bash
@@ -21,7 +21,27 @@ pip install -r requirements.txt
 
 #### 3. Build and run the program
 ```bash
-make
+make macos
+```
+
+>You may need to grant **Screen Recording** and **Accessibility** permissions to the terminal >in **macOS System Settings**.
+
+### Linux (X11)
+
+#### 2. Install Python dependencies
+```bash
+pip install -r requirements.txt
+```
+
+#### 3. Install Gtk dependencies
+e.g. on Debian:
+```
+sudo apt install python3-gi python3-gi-cairo gir1.2-gtk-3.0 libcairo2 gtk3
+```
+
+#### 3. Build and run the program
+```bash
+make linux
 ```
 
 You may need to grant **Screen Recording** and **Accessibility** permissions to the terminal in **macOS System Settings**.

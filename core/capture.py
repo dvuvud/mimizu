@@ -3,13 +3,29 @@ import base64
 from io import BytesIO
 from PIL import Image
 import config
+import platform
+
+MACOS = 'Darwin'
+LINUX = 'Linux'
 
 class ScreenCapture:
     def __init__(self):
-        self.sc_obj = config.SC_OBJ
+        self.platform = platform.system()
+
+        if self.platform == MACOS:
+            print("[DEBUG] Detected macos")
+            self.sc_obj = config.SC_OBJ_MACOS
+
+        elif self.platform == LINUX:
+            print("[DEBUG] Detected linux")
+            self.sc_obj = config.SC_PY_PATH
+
+        else:
+            raise Exception(f"Platform '{self.platform}' is not supported")
 
     def capture_region(self):
         """Capture a screen region using the configured screen capture tool"""
+        print("capture started")
         try:
             proc = subprocess.Popen(
                     [self.sc_obj],
@@ -17,8 +33,11 @@ class ScreenCapture:
                     stderr=subprocess.PIPE,
                     text=True
                     )
+            print(proc)
 
             stdout, stderr = proc.communicate()
+
+            print(stdout)
 
             for line in stdout.split('\n'):
                 if line.startswith('PNG_DATA:'):
@@ -45,3 +64,4 @@ class ScreenCapture:
             if config.DEBUG_MODE:
                 print(f"[DEBUG] Error during capture: {e}")
             return None
+
