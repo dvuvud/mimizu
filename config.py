@@ -11,7 +11,7 @@ DEBUG_MODE = True
 # Screen capture settings
 AUTO_SAVE_CAPTURES = False
 SAVE_DIRECTORY = './captures'
-SC_OBJ = './build/mimizu_overlay'
+SC_OBJ_MACOS = './build/mimizu_overlay'
 SC_PY_PATH = './native/gtk/index.py'
 
 # OCR settings
