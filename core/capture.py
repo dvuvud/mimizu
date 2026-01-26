@@ -33,11 +33,8 @@ class ScreenCapture:
                     stderr=subprocess.PIPE,
                     text=True
                     )
-            print(proc)
 
             stdout, stderr = proc.communicate()
-
-            print(stdout)
 
             for line in stdout.split('\n'):
                 if line.startswith('PNG_DATA:'):
